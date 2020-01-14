@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Forcast</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+</body>
+<header class="Jumbotron">
+    <h1 clas="display-3">
+        <i class="fa fa eye"></i>weather forcast</h1>
+</header>
+
+<!-- <div class="container"> -->
+<div class="row">
+    <div class="card col-4 md-4">
+        <div class="card-body">
+            <h4 class="card-header">Search for a City</h4>
+            <div class="bg-light text light"> </div>
+            <form clas="card-body" id="searchform"></form>
+            <input type="text" id="searchinput" placeholder="Enter Zipcode" />
+            <div class="btn">
+                <button id="SearchResults">Search</button>
+            </div>
+            <ul class="list-group md-4">
+                <li class="list-group-item md-4">New York</li>
+                <li class="list-group-item">Orlando</li>
+                <li class="list-group-item">Seattle</li>
+                <li class="list-group-item">Denver</li>
+                <li class="list-group-item">Atlanta</li>
+                <li class="list-group-item">Chicago</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container col-8 md-8">
+        <div class="row">
+        <div class="col-12 md-4 pd-4">
+            <div class="card">
+                <h4 class="card-header">weather results</h4>
+                <div class="card-body" id="searchResponse"></div>
+            </div>
+        </div>
+        <div class="col-12 md-4">
+            <div class="card">
+                <h5 class="card-header">5 day Forcast</h5>
+                <div class="card-body" id="forcast"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="script.js"></script>
+
+</html>
