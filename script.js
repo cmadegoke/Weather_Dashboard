@@ -28,7 +28,7 @@ function handleformsubmit(event){
     }
     
 
- var queryUrl = `http://api.openweathermap.org/data/2.5/forecast/?q=${cityID}&APPID=e37e1b254dd810c3870001c45995ed30`
+ var queryUrl = 'http://api.openweathermap.org/data/2.5/forecast/?q=' + cityID + "&units=imperial" + "&APPID=e37e1b254dd810c3870001c45995ed30"
 
  $.ajax({
      url : queryUrl,
@@ -44,8 +44,8 @@ function handleformsubmit(event){
     
 function show(weatherRES){
     return "<h2><strong>City</strong>: " + weatherRES.city.name + "</h2>"+
-        "<h3><strong>Description</strong>: <img src ='http://openweathermap.org/img/w/+ +'.png'>" + weatherRES.list[0].weather[0].description + "</h3>"+
-       "<h3><strong>Temperature</strong>: " + weatherRES.list[0].main.temp + "&deg;C</h3>"+
+        "<h3><strong>Description</strong>: <img src = 'http://openweathermap.org/img/w/"+ weatherRES.list[0].weather[0].icon +".png'>" +  weatherRES.list[0].weather[0].description + "</h3>"+
+       "<h3><strong>Temperature</strong>: " + weatherRES.list[0].main.temp + "&deg;F</h3>"+
            "<h3><strong>Humidity</strong>: " + weatherRES.list[0].main.humidity +"%</h3>"+
            "<h3><strong>WindSpeed</strong>: " + weatherRES.list[0].wind.speed +"</h3>"
 
