@@ -1,0 +1,33 @@
+
+.jumbotron-fluid{
+    background-color: springgreen;
+    text-align: center;
+    text-decoration-color: cornsilk;
+    font-weight: bold;
+    
+}
+#searchform{
+    margin-bottom: 10px;
+    margin-top: 15px; 
+    padding: 10px;
+
+
+}
+#searchinput{
+margin-top: 10px;
+padding: 5px;
+margin-bottom: 10px;
+}
+    
+#header1{
+    background-color: royalblue;
+}
+.btn{
+    color: royalblue;
+}
+#forcast{
+    border: 10px;
+    color: blue;
+    padding-block: 10px;
+    text-decoration-color: lightslategray;
+}

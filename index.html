@@ -17,29 +17,34 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
 </body>
-<header class="Jumbotron">
-    <h1 clas="display-3">
-        <i class="fa fa eye"></i>weather forcast</h1>
+<header>
+<div class="jumbotron-fluid ">
+    <div class="container">
+        <i class="fas fa-cloud-sun display-3"></i>
+        <h1 class="display-3">Weather Forecast</h1>
+        </div>
+    </div>
 </header>
 
 <!-- <div class="container"> -->
 <div class="row">
     <div class="card col-4 md-4">
         <div class="card-body">
-            <h4 class="card-header">Search for a City</h4>
-            <div class="bg-light text light"> </div>
+            <h4 class="card-header" id="header1">Search for a City</h4>
+            <!-- <div class="bg-dark text light"> </div> -->
             <form clas="card-body" id="searchform"></form>
-            <input type="text" id="searchinput" placeholder="Enter Zipcode" />
-            <div class="btn">
+            <input type="text" id="searchinput" placeholder="Enter City"/>
+            <div class="btn fa fa-search">
                 <button id="SearchResults">Search</button>
             </div>
+        
             <ul class="list-group md-4">
-                <li class="list-group-item md-4">New York</li>
-                <li class="list-group-item">Orlando</li>
-                <li class="list-group-item">Seattle</li>
-                <li class="list-group-item">Denver</li>
-                <li class="list-group-item">Atlanta</li>
-                <li class="list-group-item">Chicago</li>
+                <li class="list-group-item" id="N">New York</li>
+                <li class="list-group-item" id= "O">Orlando</li>
+                <li class="list-group-item" id="S">Seattle</li>
+                <li class="list-group-item" id="D">Denver</li>
+                <li class="list-group-item" id="A">Atlanta</li>
+                <li class="list-group-item" id="C">Chicago</li>
             </ul>
         </div>
     </div>
@@ -47,14 +52,16 @@
         <div class="row">
         <div class="col-12 md-4 pd-4">
             <div class="card">
-                <h4 class="card-header">weather results</h4>
+                <h4 class="card-header">Today's Weather</h4>
                 <div class="card-body" id="searchResponse"></div>
             </div>
         </div>
         <div class="col-12 md-4">
             <div class="card">
-                <h5 class="card-header">5 day Forcast</h5>
-                <div class="card-body" id="forcast"></div>
+                <h3 class="card-header">5 day Forcast</h3>
+                <div class="card-body row" id="forcast">
+                    
+                </div>
             </div>
         </div>
     </div>
