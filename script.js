@@ -116,7 +116,7 @@ function show(weatherRES){
 
         var date = document.createElement('div')
         var dateObj = new Date(forecast[i].Datenanme);
-        date.innerHTML = dateObj.getMonth()  + '-' + dateObj.getDate() + '-' + dateObj.getFullYear();
+        date.innerHTML = dateObj.getMonth() +'1'  + '-' + dateObj.getDate() + '-' + dateObj.getFullYear();
         var Temp = document.createElement('div')   
         Temp.innerHTML = 'Temp: ' + forecast[i].Temp 
 
