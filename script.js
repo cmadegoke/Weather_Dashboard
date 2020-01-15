@@ -40,8 +40,10 @@ function handleformsubmit(event){
    
     var currentWea = show(weatherRES);
     $('#searchResponse').html(currentWea);
-   
-    
+
+    var header = document.getElementById ('Header')
+    header.innerHTML = "<h3><strong>Today's Weather </strong></h3>"; 
+
 function show(weatherRES){
     return "<h2><strong>City</strong>: " + weatherRES.city.name + "</h2>"+
         "<h3><strong>Description</strong>: <img src = 'http://openweathermap.org/img/w/"+ weatherRES.list[0].weather[0].icon +".png'>" +  weatherRES.list[0].weather[0].description + "</h3>"+
@@ -104,11 +106,16 @@ function show(weatherRES){
     var forecast = [dayOne,dayTwo, dayThree, dayFour, dayFive ];
     searchResults(forecast)
     console.log(forecast)
+
+
   
  })
  
  function searchResults(forecast) {
-        var parent = document.getElementById('forcast')
+       var Fiveday= document.getElementById('Day');
+        var parent = document.getElementById('forcast');
+        
+
       for (var i= 0; i < forecast.length; i++){
 
         var card = document.createElement("div")
@@ -118,13 +125,13 @@ function show(weatherRES){
         var dateObj = new Date(forecast[i].Datenanme);
         date.innerHTML = dateObj.getMonth() +'1'  + '-' + dateObj.getDate() + '-' + dateObj.getFullYear();
         var Temp = document.createElement('div')   
-        Temp.innerHTML = 'Temp: ' + forecast[i].Temp 
+        Temp.innerHTML = 'Temp: '+ forecast[i].Temp + "&deg;F"
 
         var icon = document.createElement('img')    
         icon.innerHTML= forecast[i].IconImage
         icon.setAttribute('src', 'http://openweathermap.org/img/w/' + forecast[i].IconImage + '.png');
         var humidity = document.createElement('div');
-        humidity.innerHTML = 'Humidity: ' + forecast[i].Humidity
+        humidity.innerHTML = 'Humidity: ' + forecast[i].Humidity +"% "
         var wind = document.createElement('div')   
         wind.innerHTML = 'Wind: ' + forecast[i].WindSpeed    
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
@@ -134,8 +141,12 @@ function show(weatherRES){
         card.appendChild(humidity);
         card.appendChild(wind);
         card.appendChild(Temp);
-
+        
+        
         parent.appendChild(card);
+        Fiveday.innerHTML = "<h3><strong>5 Day Forcast </strong></h3>"; 
+        
+
         
         
       }
@@ -164,9 +175,9 @@ function handleclearclick(event){
 
 Searchbtn.addEventListener("click", handleformsubmit);
 
-Den.addEventListener("click", handleformsubmit);
-New.addEventListener("click", prelist);
-Chic.addEventListener("click", prelist);
+Den.addEventListener("click", searchResults);
+New.addEventListener("click", searchResults);
+Chic.addEventListener("click", searchResults);
 Seat.addEventListener("click", prelist);
 Atl.addEventListener("click", prelist);
 Orl.addEventListener("click", prelist);
