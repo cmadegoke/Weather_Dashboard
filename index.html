@@ -20,7 +20,7 @@
 <header>
 <div class="jumbotron-fluid ">
     <div class="container">
-        <i class="fas fa-cloud-sun display-3"></i>
+        <i class="fas fa-cloud-sun icon display-3"></i>
         <h1 class="display-3">Weather Forecast</h1>
         </div>
     </div>
@@ -31,11 +31,11 @@
 <div class="row">
     <div class="card col-4 md-4">
         <div class="card-body">
-            <h4 class="card-header" id="header1">Search for a City</h4>
+            <h4 class="card-header" id="header1">Search for a City or State</h4>
             <!-- <div class="bg-dark text light"> </div> -->
             <form clas="card-body" id="searchform"></form>
-            <input type="text" id="searchinput" placeholder="Enter City"/>
-            <div class="btn fa fa-search">
+            <input type="text" id="searchinput" placeholder="Enter City or State"/>
+            <div class="btn">
                 <button id="SearchResults">Search</button>
             </div>
         
@@ -50,7 +50,7 @@
         </div>
     </div>
     <div class="container col-8 md-8">
-        <div class="row">
+        <div class="row hide-row" id="hiderow">
         <div class="col-12 md-4 pd-4">
             <div class="card">
                 <div class="card-header" id="Header"></div>
@@ -59,18 +59,19 @@
         </div>
         <div class="col-12 md-4">
             <div class="card">
-                <div class="card-header"id="Day"></div>
-                <div class="card-body row" id="forcast">
+                <h3 class="card-header"id="Day"></h3>
+                <span class="border-0"></span>
+                <div class="card-body row"id="forcast">
                     
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!-- </div>
 </div>
 </div>
-</div>
-</div>
+</div> -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="script.js"></script>
 

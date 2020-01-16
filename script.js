@@ -10,6 +10,8 @@ var Atl= document.querySelector("#A");
 var Seat= document.querySelector("#S");
 var Orl= document.querySelector("#O");
 var Den= document.querySelector("#D");
+var parent = document.getElementById('forcast');
+var hiderow = document.getElementById('hiderow');
 
 
 console.log(Searchbtn)
@@ -20,15 +22,54 @@ function prelist(event){
 
 
 function handleformsubmit(event){
-    //event.preventDefault();
+    event.preventDefault();
     console.log(searchInput.value)
+    removeoldforecast();
+    //forecastList();
     var cityID = searchInput.value;
     if (!cityID) {
         return false
     }
-    
+    runData(cityID)
 
- var queryUrl = 'http://api.openweathermap.org/data/2.5/forecast/?q=' + cityID + "&units=imperial" + "&APPID=e37e1b254dd810c3870001c45995ed30"
+}
+
+function removeoldforecast(){
+    Array.from(parent.children).forEach(child =>{parent.removeChild(child)});
+}
+
+
+// function handleclearclick(event){
+// searchResults.empty();
+// }
+
+Searchbtn.addEventListener("click", handleformsubmit);
+
+ Den.addEventListener("click", function() {
+     runData('Denver');
+    });
+  New.addEventListener ("click",function(){
+      runData ('New York'); 
+  });
+  Chic.addEventListener ("click",function(){
+    runData ('Chicago');
+   });
+   Seat.addEventListener ("click",function(){
+    runData ('Seattle');
+   });
+   Atl.addEventListener ("click",function(){
+    runData ('Atlanta');
+   });
+   Orl.addEventListener ("click",function(){
+    runData ('Orlando');
+   });
+
+
+
+//clearbtn.addEventListener("click", handleclearclick);
+
+function runData(cityID) {
+    var queryUrl = 'http://api.openweathermap.org/data/2.5/forecast/?q=' + cityID + "&units=imperial" + "&APPID=e37e1b254dd810c3870001c45995ed30"
 
  $.ajax({
      url : queryUrl,
@@ -113,15 +154,14 @@ function show(weatherRES){
  
  function searchResults(forecast) {
        var Fiveday= document.getElementById('Day');
-        var parent = document.getElementById('forcast');
+        
         
 
       for (var i= 0; i < forecast.length; i++){
 
-        var card = document.createElement("div")
-        card.classList.add('col-2')
-
-        var date = document.createElement('div')
+        var card = document.createElement("div");
+        card.classList.add('col-2');
+        var date = document.createElement('div');
         var dateObj = new Date(forecast[i].Datenanme);
         date.innerHTML = dateObj.getMonth() +'1'  + '-' + dateObj.getDate() + '-' + dateObj.getFullYear();
         var Temp = document.createElement('div')   
@@ -145,42 +185,15 @@ function show(weatherRES){
         
         parent.appendChild(card);
         Fiveday.innerHTML = "<h3><strong>5 Day Forcast </strong></h3>"; 
+
+        hiderow.classList.remove('hide-row');
         
 
         
         
       }
-    //   var currentWeather = document.getElementById('searchResponse');
-    //   //cityID.innerHTML= weatherR;
-    //   cityID.innerText = searchInput.value
-    //    var Res = document.createElement('div');
-    //  Res.innerText = cityID;
-    // date.innerHTML = dateObj.getMonth()  + '/' + dateObj.getDate() + '/' + dateObj.getFullYear();
-    // //var date = document.createElement('div')
-    //   weatherR.innerHTML = forecast[0].Datenanme;
-    //   var icon = document.createElement('image')    
-    //     icon.innerHTML= forecast[0].IconImage
-
+ 
       
  }
   
 }
-
-
-
-
-function handleclearclick(event){
-
-}
-
-Searchbtn.addEventListener("click", handleformsubmit);
-
-Den.addEventListener("click", searchResults);
-New.addEventListener("click", searchResults);
-Chic.addEventListener("click", searchResults);
-Seat.addEventListener("click", prelist);
-Atl.addEventListener("click", prelist);
-Orl.addEventListener("click", prelist);
-
-
-//clearbtn.addEventListener("click", handleclearclick);

@@ -1,36 +1,63 @@
 
 .jumbotron-fluid{
-    background-color: springgreen;
+    background-color: gray;
     text-align: center;
-    text-decoration-color: cornsilk;
+    color: honeydew;
     font-weight: bold;
     
 }
 #searchform{
     margin-bottom: 10px;
-    margin-top: 15px; 
+    margin-top: 10px; 
     padding: 10px;
-
-
 }
+.icon{
+    align-self: auto;
+}
+
+
 #searchinput{
 margin-top: 10px;
-padding: 5px;
-margin-bottom: 10px;
+padding: 15px;
+margin-bottom: 5px;
+background-color: ivory;
 }
     
 #header1{
-    background-color: royalblue;
+    background-color: rgb(125, 129, 141);
+    color: white;
+    margin: 10px;
+    padding: 10px;
 }
 .btn{
     color: royalblue;
+    background-color: blue;
 }
-#forcast{
-    border: 10px;
+.row{
+    border-block: 20px;
     color: blue;
     padding-block: 10px;
     text-decoration-color: lightslategray;
 }
+
+.hide-row {
+    display: none !important;
+}
 .main{
-    background-color: lightsteelblue;
+    background-image:url("./Images/Cloud.jpg");
+    
+}
+#searchResponse{
+    background-color: lightyellow;
+}
+#forcast{
+
+    background-color: lightskyblue;
+    
+}
+
+#SearchResults{
+background-color: rgb(177, 177, 196);
+margin: 10px;
+padding: 10px;
 }
